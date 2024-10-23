@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",  // Убедись, что файл действительно существует в корне проекта
+  "compilerOptions": {
+    "outDir": "./dist/app",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

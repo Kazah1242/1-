@@ -1,0 +1,68 @@
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    background: linear-gradient(135deg, #000, #333, #000);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Централизируем по вертикали */
+    align-items: center; /* Централизируем по горизонтали */
+    text-align: center; /* Централизируем текст */
+    overflow: hidden; /* Чтобы избежать прокрутки */
+    padding-bottom: 80px; /* Добавляем отступ для навигационного меню снизу */
+}
+
+h1, p, a {
+    color: #fff;
+}
+
+/* Добавляем стили для навигационного меню */
+.nav-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8); /* Фоновое изображение заменено на затемнённый фон */
+
+    &__list {
+        display: flex;
+        width: 100%;
+        max-width: 355px;
+        height: 60px;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgba(0, 0, 0, 0.7); /* Прозрачный черный фон для меню */
+        border-radius: 10px; /* Добавляем радиус для красоты */
+    }
+
+    &__link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #f90; /* Цвет при наведении */
+        }
+    }
+}

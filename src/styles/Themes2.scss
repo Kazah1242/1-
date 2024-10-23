@@ -1,0 +1,101 @@
+.themes2-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .scroll-animation {
+      opacity: 0;
+      transform: translateY(20px); /* Начинаем немного ниже */
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .scroll-animation.animate {
+      opacity: 1;
+      transform: translateY(0); /* Перемещаем на своё место */
+    }
+    
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 200px 1fr; // Две колонки: фото и текст
+      grid-template-rows: auto 1fr; // Фото сверху, текст занимает оставшуюся часть
+      gap: 20px;
+  
+      .photo-block {
+        grid-column: 2; /* Фото в правом верхнем углу */
+        grid-row: 1 / 2;
+        justify-self: start; /* Выравниваем по началу */
+        margin-left: -30px; /* Смещение фото влево */
+        align-self: center; /* Центрируем вертикально */  
+        img {
+          max-width: 150px;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+      .scrollable-text {
+        max-height: 250px; /* Ограничиваем высоту */
+        overflow-y: auto; /* Включаем вертикальную прокрутку */
+        background-color: #fff;
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .text-block-right {
+        grid-column: 1 / -1; /* Растянуть блок на всю ширину */
+        background-color: #fff;
+        padding: 10px 15px; /* Уменьшенные внутренние отступы */
+        margin: 10px 0; /* Уменьшенные внешние отступы сверху и снизу */
+        border-radius: 8px; /* Лёгкие закругления углов */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Мягкая тень */
+        font-size: 14px;
+        line-height: 1.2; /* Оптимальное межстрочное расстояние */
+        width: 95%; /* Растянуть на всю ширину */
+        box-sizing: border-box; /* Учитывать padding в ширину */
+      }
+      .text-block-left {
+        max-width: 160px; /* Ограничиваем ширину блока */
+        padding: 10px 15px; /* Внутренние отступы */
+        font-size: 15px;
+        line-height: 1; /* Увеличенный интервал между строками */
+        box-sizing: border-box; /* Учитываем padding в ширину */
+        border-radius: 8px; /* Закругление углов */
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Мягкая тень */
+
+      }
+      .clickable-text {
+        color: #007bff; /* Цвет текста */
+        cursor: pointer; /* Указатель курсора при наведении */
+        text-decoration: underline; /* Подчеркивание текста */
+        font-weight: bold; /* Жирный текст */
+        transition: color 0.3s;
+      
+        &:hover {
+          color: #0056b3; /* Изменение цвета при наведении */
+        }
+      }
+      
+      .text-block {
+        grid-column: 1 / 3; // Растягиваем текст на всю ширину под фото
+        grid-row: 2 / 3;
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        font-size: 18px;
+        line-height: 1.6;
+        
+        p {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  
